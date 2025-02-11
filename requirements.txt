@@ -3,3 +3,5 @@ django-environ==0.12.0
 mysqlclient==2.2.7
 django-prose-editor==0.10.3
 pytest-django
+django-tailwind
+django-tailwind[reload]
