@@ -30,9 +30,9 @@
 
             <div class="flex">
               <h3 class="flex items-center space-x-2 cursor-pointer ">
-                <span class="hover:text-yellow-300 font-medium text-gray-900">Schule</span>
+                <span class="hover:text-yellow-300 font-medium text-gray-900" @click="open_schule_filter=!open_schule_filter">Schule</span>
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex size-5 justify-center" @click="open_schule_filter=true" x-show="open_schule_filter==false">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex size-5 justify-center" x-show="open_schule_filter==false">
                   <path fill-rule="evenodd" d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" />
                 </svg>
 
@@ -199,9 +199,9 @@
             <div class="flex">
 
               <h3 class="flex items-center space-x-2">
-                <span class="hover:text-yellow-300 font-medium text-gray-900">Zielniveau</span>
+                <span class="hover:text-yellow-300 font-medium text-gray-900" @click="open_zielniveau_filter=!open_zielniveau_filter">Zielniveau</span>
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5" @click="open_zielniveau_filter=true" x-show="open_zielniveau_filter==false">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5" x-show="open_zielniveau_filter==false">
                   <path fill-rule="evenodd" d="M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z" clip-rule="evenodd" />
                 </svg>
   

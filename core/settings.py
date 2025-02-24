@@ -49,9 +49,9 @@ INSTALLED_APPS = [
     "courses",
     
     # other Django apps
-    "django_prose_editor",
-    "tailwind",
     "theme",
+    "tailwind",
+    "django_prose_editor",
     'django_browser_reload'
 ]
 

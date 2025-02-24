@@ -1,0 +1,68 @@
+{% extends 'base.html' %} {% block main %} {{ courses }}
+<div class="flex flex-col bg-green-300">
+  <div class="flex flex-col mt-4 px-2">
+    {% include "components/sidebar.html" %}
+  </div>
+  <div class="flex flex-col mt-4 px-4">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <table class="w-full text-left text-sm text-gray-500 rtl:text-right">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+          <tr>
+            <th scope="col" class="px-6 py-3">Kurs name</th>
+            <th scope="col" class="px-6 py-3">Schule</th>
+            <th scope="col" class="px-6 py-3">Zielniveau</th>
+            <th scope="col" class="px-6 py-3">Kurszeiten</th>
+            <th scope="col" class="px-6 py-3">Kursabschluss</th>
+            <th scope="col" class="px-6 py-3">Kursinitialisierung</th>
+            <th scope="col" class="px-6 py-3">Anmeldeschluss</th>
+            <th scope="col" class="px-6 py-3">Preis</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for course in course_list %}
+          <tr class="bg-white border-b border-green-200">
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+            >
+              {{ course.name }}
+            </th>
+            <td class="px-6 py-4">
+              <span
+                class="px-4 py-1 justify-center text-gray-900 bg-blue-300 rounded-full"
+              >
+                ECAP</span
+              >
+            </td>
+            <td class="px-6 py-4">{{ course.level }}</td>
+            <td class="px-6 py-4">{{ course.duration_course|safe }}</td>
+            <td class="px-6 py-4">
+              <span
+                class="px-4 py-1 justify-center font-semibold text-gray-900 bg-red-300 rounded-full"
+                >{{ course.registration_deadline|date:"j. F Y" }}</span
+              >
+            </td>
+            <td class="px-6 py-4">{{ course.initial_date|date:"j. F Y" }}</td>
+            <td class="px-6 py-4">{{ course.initial_date|date:"j. F Y" }}</td>
+            <td class="px-6 py-4">
+              <span
+                class="flex justify-center font-semibold text-gray-900 bg-green-200 rounded-full"
+              >
+                {{ course.price | safe}}
+              </span>
+            </td>
+          </tr>
+
+          {% empty %}
+          <tr>
+            <td colspan="7" class="px-6 py-4 text-center">
+              No courses available.
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{%endblock main %}

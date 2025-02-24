@@ -1,12 +1,18 @@
 from django.shortcuts import render
-from django.views.generic import View
+from django.utils import timezone
+from django.views.generic import ListView
+from .models import Course
 
 # Create your views here.
 
-class HomeView(View):
-    
-    def get(self, request, *args, **kwargs):
-        context = {
-            
-        }
-        return render(request, 'index.html', context)
+class CourseListView(ListView):
+    model = Course
+    paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["now"] = timezone.now()
+        
+        print(context)
+        
+        return context
